@@ -3,183 +3,664 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Chuiimuii ♡</title>
+
+  <title>From Sundruu to Chuiimuii ♡</title>
+
   <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Soft background decoration -->
-  <div class="petals" aria-hidden="true">
-    <span>♡</span><span>✦</span><span>♡</span><span>✧</span><span>♡</span>
-    <span>✦</span><span>♡</span><span>✧</span><span>♡</span><span>✦</span>
+  <!-- =====================================================
+       BACKGROUND
+  ====================================================== -->
+
+  <div class="background-hearts">
+    <span>♡</span>
+    <span>♡</span>
+    <span>✦</span>
+    <span>♡</span>
+    <span>✧</span>
+    <span>♡</span>
+    <span>✦</span>
+    <span>♡</span>
+    <span>✧</span>
+    <span>♡</span>
   </div>
 
-  <!-- Optional password screen.
-       Change the password in script.js. This is only a gate, NOT true security on a public website. -->
-  <section id="lockScreen" class="screen active">
-    <div class="card lock-card">
-      <div class="tiny-label">A little something for you</div>
-      <div class="big-heart">♡</div>
-      <h1>Only for Chuiimuii</h1>
-      <p class="soft">There is a tiny secret waiting inside.</p>
-      <input id="passwordInput" type="password" placeholder="Enter the secret word">
-      <button id="unlockBtn" class="primary-btn">Open it ♡</button>
-      <p id="wrongPassword" class="error-text"></p>
-      <p class="hint">Hint: it's something only Sundruu would call you.</p>
+
+  <!-- =====================================================
+       PASSWORD / PRIVATE ENTRY
+  ====================================================== -->
+
+  <section id="passwordScreen" class="page password-page">
+
+    <div class="password-card">
+
+      <div class="mini-label">
+        A little something for you
+      </div>
+
+      <div class="password-heart">
+        ♡
+      </div>
+
+      <h1>
+        Only for<br>
+        <span>Chuiimuii</span>
+      </h1>
+
+      <p>
+        Sundruu made something<br>
+        especially for you.
+      </p>
+
+      <input
+        id="passwordInput"
+        type="password"
+        placeholder="Enter the secret word"
+      >
+
+      <button id="unlockButton" class="pink-button">
+        Open it ♡
+      </button>
+
+      <div id="passwordError"></div>
+
+      <small>
+        Hint: something only Sundruu calls you.
+      </small>
+
     </div>
+
   </section>
 
-  <main id="site" class="hidden">
 
-    <!-- INTRO -->
-    <section id="intro" class="screen active">
-      <div class="card intro-card">
-        <div class="tiny-label">ROOM 1 · THE BEGINNING</div>
-        <div class="sparkle">✦</div>
-        <h1>Hey, Chuiimuii <span>♡</span></h1>
-        <p class="large-copy">
-          I made a tiny little world for you.<br>
-          And yes… you have to play along.
+
+  <!-- =====================================================
+       WEBSITE
+  ====================================================== -->
+
+  <main id="website" class="hidden">
+
+
+    <!-- ===================================================
+         ROOM 0 — FROM ME TO YOU
+    ==================================================== -->
+
+    <section id="introRoom" class="page room intro-room">
+
+      <div class="intro-content">
+
+        <div class="small-top-text">
+          A little world made just for you
+        </div>
+
+        <h1 class="script-title">
+          From me to you.
+        </h1>
+
+        <h2>
+          This is how much I love you.
+        </h2>
+
+        <div class="couple-drawing">
+          <div class="drawing-heart">♡</div>
+          <div class="drawing-person left-person">♡</div>
+          <div class="drawing-person right-person">♡</div>
+        </div>
+
+        <p class="intro-note">
+          Take your time.<br>
+          There are a few little rooms waiting for you.
         </p>
 
-        <div class="you-box">
-          <div>Y-O-U means...</div>
-          <strong>You-nooooooo</strong>
-          <span>↓</span>
-          <strong>UUU-yessssss ♡</strong>
-        </div>
+        <button id="enterMuseumButton" class="pink-button">
+          Enter my little world →
+        </button>
 
-        <button id="startBtn" class="primary-btn">Okay Sundruu, show me ✨</button>
       </div>
+
     </section>
 
-    <!-- PUZZLE -->
-    <section id="puzzle" class="screen">
-      <div class="card puzzle-card">
-        <div class="tiny-label">ROOM 2 · THE RESTORATION DESK</div>
-        <h2>This photo fell apart<span>🧩</span></h2>
-        <p class="soft">Nine pieces. Tap two to swap them, or drag one where you want it.</p>
 
-        <div id="puzzleGrid" class="puzzle-grid"></div>
 
-        <div class="puzzle-stats">
-          <span>Moves <b id="moves">0</b></span>
-          <span>♡</span>
-          <span id="puzzleStatus">Put us back together.</span>
+    <!-- ===================================================
+         ROOM 1 — MUSEUM DOOR
+    ==================================================== -->
+
+    <section id="museumRoom" class="page room museum-room">
+
+      <div class="room-heading">
+
+        <div class="room-badge">
+          ♡ SOMEONE WANTED YOU TO KNOW
         </div>
 
-        <div id="progressDots" class="progress-dots"></div>
-
-        <button id="puzzleNext" class="primary-btn hidden">I fixed it ♡</button>
-      </div>
-    </section>
-
-    <!-- MEMORIES -->
-    <section id="memories" class="screen">
-      <div class="card wide-card">
-        <div class="tiny-label">ROOM 3 · OUR LITTLE THINGS</div>
-        <h2>A few pieces of us<span>♡</span></h2>
-        <p class="soft">Some things deserve to stay forever.</p>
-
-        <div class="memory-grid">
-          <article class="memory">
-            <img src="photo1.jpg" alt="Our memory 1">
-            <div><span>01</span><b>That smile.</b><small>The one I could look at forever.</small></div>
-          </article>
-          <article class="memory">
-            <img src="photo2.jpg" alt="Our memory 2">
-            <div><span>02</span><b>Our chaos.</b><small>Somehow my favourite kind.</small></div>
-          </article>
-          <article class="memory">
-            <img src="photo3.jpg" alt="Our memory 3">
-            <div><span>03</span><b>Our moments.</b><small>Little things that became big memories.</small></div>
-          </article>
-          <article class="memory">
-            <img src="photo4.jpg" alt="Our memory 4">
-            <div><span>04</span><b>You & me.</b><small>My favourite combination.</small></div>
-          </article>
+        <div class="room-subtitle">
+          CLOSED TO EVERYONE · EXCEPT YOU.
         </div>
 
-        <button id="memoryNext" class="primary-btn">There is one more thing… 💌</button>
+        <h1>
+          Sundruu built you a
+          <span>museum.</span>
+        </h1>
+
+        <p>
+          Knock three times. That's the rule.
+        </p>
+
       </div>
-    </section>
 
-    <!-- LETTER -->
-    <section id="letter" class="screen">
-      <div class="card letter-card">
-        <div class="tiny-label">ROOM 4 · THE LETTER</div>
-        <h2>For my Chuiimuii ♡</h2>
 
-        <div class="letter-paper">
-          <p>Dear Chuiimuii,</p>
+      <div class="museum-scene">
 
-          <p>
-            If you are reading this, you made it through all my little rooms.
-            But honestly, the real reason I made this is much simpler:
-            <b>I love having you in my life.</b>
-          </p>
+        <div id="door" class="museum-door">
 
-          <p>
-            You call me <b>Sundruu</b>, and somehow that tiny word became
-            one of my favourite things. You make ordinary moments feel
-            special without even trying.
-          </p>
+          <div class="door-message">
+            Only for<br>
+            Chuiimuii ♡
+          </div>
 
-          <p>
-            I don't need a perfect story. I just want more of our story —
-            more laughs, more nonsense, more memories, and more days where
-            I get to choose you again.
-          </p>
+          <div class="door-knocker">
+            ◯
+          </div>
 
-          <p>
-            So this little website is my very small way of saying a very big
-            thing:
-            <br><br>
-            <strong>I choose you. Today, tomorrow, and all the days after. ♡</strong>
-          </p>
+          <div class="door-handle">
+            ◯
+          </div>
 
-          <p class="signature">— Your Sundruu ♡</p>
         </div>
 
-        <button id="letterNext" class="primary-btn">One last surprise ✨</button>
+
+        <div class="museum-light">
+
+          <div class="light-text">
+            <strong>Come in, Chuiimuii.</strong>
+
+            <span>
+              A few rooms, and every one of them
+              is about you.
+            </span>
+          </div>
+
+        </div>
+
       </div>
+
+
+      <div class="knock-area">
+
+        <div id="knockText">
+          Knock the door three times ♡
+        </div>
+
+        <div class="knock-dots">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+
+      </div>
+
+
+      <button
+        id="museumContinue"
+        class="pink-button hidden"
+      >
+        Walk inside →
+      </button>
+
     </section>
 
-    <!-- FINAL -->
-    <section id="final" class="screen">
-      <div class="card final-card">
-        <div class="tiny-label">ROOM 5 · THE END… OR MAYBE NOT</div>
+
+
+    <!-- ===================================================
+         ROOM 2 — PUZZLE
+    ==================================================== -->
+
+    <section id="puzzleRoom" class="page room puzzle-room">
+
+      <div class="room-heading">
+
+        <div class="room-number">
+          ROOM 2 · THE RESTORATION DESK
+        </div>
+
+        <h1>
+          This photo fell
+          <span>apart.</span>
+        </h1>
+
+        <p>
+          Nine pieces. Tap two to swap them.
+        </p>
+
+        <p>
+          Put us back together.
+        </p>
+
+      </div>
+
+
+      <div class="puzzle-wrapper">
+
+        <div id="puzzleBoard" class="puzzle-board">
+        </div>
+
+        <div class="puzzle-info">
+
+          <span>
+            Moves
+            <strong id="moveCount">0</strong>
+          </span>
+
+          <span>
+            ♡
+          </span>
+
+          <span>
+            Time
+            <strong id="timer">0:00</strong>
+          </span>
+
+        </div>
+
+        <button
+          id="peekButton"
+          class="small-button"
+        >
+          Hold to peek
+        </button>
+
+      </div>
+
+
+      <div id="puzzleMessage" class="puzzle-message">
+        You can do it, Chuiimuii ♡
+      </div>
+
+
+      <div id="puzzleDots" class="progress-dots">
+      </div>
+
+
+      <button
+        id="puzzleContinue"
+        class="pink-button hidden"
+      >
+        Photo restored ♡
+      </button>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         ROOM 3 — MEMORIES
+    ==================================================== -->
+
+    <section id="memoryRoom" class="page room memory-room">
+
+      <div class="room-heading">
+
+        <div class="room-number">
+          ROOM 3 · THE MEMORY GALLERY
+        </div>
+
+        <h1>
+          Little pieces of
+          <span>us.</span>
+        </h1>
+
+        <p>
+          Some moments deserve their own little room.
+        </p>
+
+      </div>
+
+
+      <div class="memory-gallery">
+
+        <div class="memory-card card-one">
+
+          <img src="photo1.jpg" alt="Our memory">
+
+          <div class="memory-caption">
+            <span>01</span>
+            <h3>That smile.</h3>
+            <p>
+              My favourite view.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="memory-card card-two">
+
+          <img src="photo2.jpg" alt="Our memory">
+
+          <div class="memory-caption">
+            <span>02</span>
+            <h3>Our nonsense.</h3>
+            <p>
+              Somehow my favourite kind.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="memory-card card-three">
+
+          <img src="photo3.jpg" alt="Our memory">
+
+          <div class="memory-caption">
+            <span>03</span>
+            <h3>Our moments.</h3>
+            <p>
+              Tiny moments. Huge memories.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="memory-card card-four">
+
+          <img src="photo4.jpg" alt="Our memory">
+
+          <div class="memory-caption">
+            <span>04</span>
+            <h3>You & me.</h3>
+            <p>
+              My favourite combination.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="memoryContinue"
+        class="pink-button"
+      >
+        There's a letter for you →
+      </button>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         ROOM 4 — LETTER
+    ==================================================== -->
+
+    <section id="letterRoom" class="page room letter-room">
+
+      <div class="room-heading">
+
+        <div class="room-number">
+          ROOM 4 · SOMETHING FROM MY HEART
+        </div>
+
+        <h1 class="script-title">
+          From Sundruu to Chuiimuii.
+        </h1>
+
+      </div>
+
+
+      <div class="letter-paper">
+
+        <div class="paper-decoration">
+          ♡
+        </div>
+
+        <p>
+          Dear Chuiimuii,
+        </p>
+
+        <p>
+          I don't really know how to put everything I feel
+          into words, so I made you a little world instead.
+        </p>
+
+        <p>
+          You call me <strong>Sundruu</strong>.
+          And I call you <strong>Chuiimuii</strong>.
+          Two silly little names, but somehow they became
+          something very special to me.
+        </p>
+
+        <p>
+          Thank you for being you.
+          Thank you for all the little conversations,
+          the laughs, the random moments and everything
+          in between.
+        </p>
+
+        <p>
+          If I could keep one thing forever,
+          it would be all those ordinary moments
+          that became extraordinary simply because
+          they had you in them.
+        </p>
+
+        <p>
+          And if you ever wonder how much I love you,
+          just remember this little website.
+          I made every room because I wanted to give
+          you something that feels like us.
+        </p>
+
+        <p>
+          I love you more than these words can explain.
+          ♡
+        </p>
+
+        <div class="letter-signature">
+          — Sundruu
+        </div>
+
+      </div>
+
+
+      <!-- OPTIONAL VOICE MESSAGE -->
+
+      <div class="voice-card">
+
+        <div class="voice-icon">
+          ♫
+        </div>
+
+        <div class="voice-information">
+
+          <strong>
+            Hear Sundruu say it
+          </strong>
+
+          <span>
+            A little message, just for you.
+          </span>
+
+        </div>
+
+        <button id="voiceButton">
+          ▶
+        </button>
+
+        <audio id="voiceAudio">
+          <source src="voice.mp3" type="audio/mpeg">
+        </audio>
+
+      </div>
+
+
+      <div class="letter-heart">
+        🥰
+      </div>
+
+
+      <button
+        id="letterContinue"
+        class="pink-button"
+      >
+        One last room →
+      </button>
+
+
+      <div class="progress-dots">
+        <i class="done"></i>
+        <i class="done"></i>
+        <i class="done"></i>
+        <i class="done"></i>
+        <i></i>
+        <i></i>
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         ROOM 5 — FINAL
+    ==================================================== -->
+
+    <section id="finalRoom" class="page room final-room">
+
+      <div class="final-content">
+
+        <div class="room-number">
+          THE LAST ROOM
+        </div>
+
         <div class="final-photo">
-          <img src="photo5.jpg" alt="Our favourite photo">
+
+          <img
+            src="photo5.jpg"
+            alt="Chuiimuii and Sundruu"
+          >
+
         </div>
-        <div class="big-heart pulse">♡</div>
-        <h1>Chuiimuii, will you stay?</h1>
-        <p class="large-copy">
+
+
+        <div class="final-heart">
+          ♡
+        </div>
+
+
+        <h1>
+          Chuiimuii,
+        </h1>
+
+        <h2>
+          will you stay?
+        </h2>
+
+        <p>
           Because Sundruu isn't planning on going anywhere. ♡
         </p>
 
-        <div class="choice-row">
-          <button id="yesBtn" class="primary-btn">UUU-yessssss 💗</button>
-          <button id="noBtn" class="ghost-btn">You-nooooooo 😭</button>
+
+        <div class="final-buttons">
+
+          <button
+            id="yesButton"
+            class="yes-button"
+          >
+            UUU-yessssss 💗
+          </button>
+
+          <button
+            id="noButton"
+            class="no-button"
+          >
+            You-nooooooo 😭
+          </button>
+
         </div>
 
-        <div id="yesMessage" class="yes-message hidden">
-          <h2>I knew it. 🥹♡</h2>
-          <p>Come here, Chuiimuii. One last picture.</p>
-          <img src="photo6.jpg" alt="Our final memory">
-          <p class="tiny-love">Made with all my heart — Sundruu</p>
+
+        <div
+          id="finalMessage"
+          class="final-message hidden"
+        >
+
+          <div class="celebration-heart">
+            ♡
+          </div>
+
+          <h2>
+            I knew it. 🥹
+          </h2>
+
+          <p>
+            Come here, Chuiimuii.
+          </p>
+
+          <div class="final-memory">
+
+            <img
+              src="photo6.jpg"
+              alt="Our final memory"
+            >
+
+          </div>
+
+          <p class="made-with-love">
+            Made with all my heart
+            <br>
+            — Sundruu ♡
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
   </main>
 
-  <audio id="music" loop preload="auto">
-    <source src="song.mp3" type="audio/mpeg">
+
+
+  <!-- =====================================================
+       MUSIC
+  ====================================================== -->
+
+  <audio id="backgroundMusic" loop>
+
+    <source
+      src="song.mp3"
+      type="audio/mpeg"
+    >
+
   </audio>
 
-  <button id="musicBtn" class="music-btn hidden" aria-label="Toggle music">♫</button>
+
+  <button
+    id="musicButton"
+    class="music-button hidden"
+    aria-label="Music"
+  >
+    ♫
+  </button>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script src="script.js"></script>
+
 </body>
 </html>
